@@ -1,3 +1,38 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Documented](#documented)
+  - [Todo](#todo)
+    - [1](#1)
+    - [2 SOLVED](#2-solved)
+  - [Revisit this point](#revisit-this-point)
+  - [](#)
+  - [Important points](#important-points)
+    - [What is a container?](#what-is-a-container)
+    - [What is @AndroidEntryPoint?](#what-is-androidentrypoint)
+    - [What is @Inject and field injection?](#what-is-inject-and-field-injection)
+    - [What is binding?](#what-is-binding)
+    - [What is @Singleton?](#what-is-singleton)
+    - [Transitive dependencies example](#transitive-dependencies-example)
+    - [@Inject for interface](#inject-for-interface)
+    - [What is module?](#what-is-module)
+    - [Optimized providers in Hilt](#optimized-providers-in-hilt)
+    - [What is @Provides?](#what-is-provides)
+    - [Container with default bindings?](#container-with-default-bindings)
+    - [Aware of the Activity](#aware-of-the-activity)
+    - [What is @Binds?](#what-is-binds)
+    - [Which module to choose?](#which-module-to-choose)
+    - [@Binds and @Provides](#binds-and-provides)
+    - [Predefined binding](#predefined-binding)
+    - [Make the class field injectable](#make-the-class-field-injectable)
+    - [Scoping to the Activity container](#scoping-to-the-activity-container)
+    - [Two implementations for the same interface](#two-implementations-for-the-same-interface)
+    - [What is qualifier?](#what-is-qualifier)
+    - [What is @EntryPoint?](#what-is-entrypoint)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Documented
 
 **Documentation**: https://androiddevnotesdocumented.github.io/android-hilt-documented/documentation/html/navigation.html
