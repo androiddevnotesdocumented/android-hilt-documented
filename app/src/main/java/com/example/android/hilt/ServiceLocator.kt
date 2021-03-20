@@ -25,6 +25,9 @@ import com.example.android.hilt.navigator.AppNavigator
 import com.example.android.hilt.navigator.AppNavigatorImpl
 import com.example.android.hilt.util.DateFormatter
 
+/**
+ * The ServiceLocator creates and stores dependencies that are obtained on demand by the classes that need them. You can think of it as a container of dependencies that is attached to the app's lifecycle, which means it will be destroyed when the app process is destroyed.
+ */
 class ServiceLocator(applicationContext: Context) {
 
     private val logsDatabase = Room.databaseBuilder(
