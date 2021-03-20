@@ -19,6 +19,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'org.jetbrains.dokka'
 
 android {
     compileSdkVersion 30
@@ -44,6 +45,24 @@ android {
         sourceCompatibility 1.8
         targetCompatibility 1.8
     }
+}
+
+tasks.dokkaHtml.configure {
+    outputDirectory.set(file("../documentation/html"))
+}
+
+dokkaHtml.configure {
+    dokkaSourceSets {
+        named("main") {
+            includeNonPublic.set(true)
+        }
+    }
+}
+
+tasks.withType(dokkaHtml.getClass()).configureEach {
+    pluginsMapConfiguration.set(
+            ["org.jetbrains.dokka.base.DokkaBase": """{ "separateInheritedMembers": true}"""]
+    )
 }
 
 dependencies {
