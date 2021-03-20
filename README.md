@@ -1,5 +1,7 @@
 # Documented
 
+**Documentation**: https://androiddevnotesdocumented.github.io/android-hilt-documented/documentation/html/navigation.html
+
 ## Todo
 
 ### 1
