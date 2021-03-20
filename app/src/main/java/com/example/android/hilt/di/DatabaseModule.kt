@@ -27,10 +27,17 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+/**
+ * Since [LoggerLocalDataSource] is scoped to the application container, the LogDao binding needs to be available in the application container. We specify that requirement using the @InstallIn annotation by passing in the class of the Hilt component associated with it (i.e. SingletonComponent:class):
+ */
 @InstallIn(SingletonComponent::class)
 @Module
 object DatabaseModule {
 
+    /**
+     * We can annotate a function with @Provides in Hilt modules to tell Hilt how to provide types that cannot be constructor injected.
+     * Since we always want Hilt to provide the same database instance, we annotate the @Provides provideDatabase() method with @Singleton.
+     */
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext appContext: Context): AppDatabase {

@@ -42,6 +42,7 @@ class LogsFragment : Fragment() {
 
     /**
      * Hilt will be in charge of populating logger field for us. This is called field injection. To perform field injection, use the @Inject annotation on Android class fields you want to be injected by Hilt.
+     * use the @InMemoryLogger qualifier on the logger field to tell Hilt to inject an instance of LoggerInMemoryDataSource
      */
     @InMemoryLogger
     @Inject lateinit var logger: LoggerDataSource

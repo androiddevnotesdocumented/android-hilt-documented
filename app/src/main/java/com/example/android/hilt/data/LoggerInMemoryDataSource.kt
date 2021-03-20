@@ -19,6 +19,10 @@ package com.example.android.hilt.data
 import java.util.LinkedList
 import javax.inject.Inject
 
+/**
+ * LoggerInMemoryDataSource that keeps the logs in memory.
+ * To be able to use LoggerInMemoryDataSource as an implementation detail, we need to tell Hilt how to provide instances of this type. As before, we annotate the class constructor with @Inject:
+ */
 class LoggerInMemoryDataSource @Inject constructor() : LoggerDataSource {
 
     private val logs = LinkedList<Log>()

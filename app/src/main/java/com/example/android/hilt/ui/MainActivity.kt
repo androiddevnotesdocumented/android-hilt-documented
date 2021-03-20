@@ -28,6 +28,8 @@ import javax.inject.Inject
  * Main activity of the application.
  *
  * Container for the Buttons & Logs fragments. This activity simply tracks clicks on buttons.
+ *
+ * Before running the app, Hilt needs to be aware of the Activity that hosts the Fragment in order to work. We'll need to use @AndroidEntryPoint.
  */
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

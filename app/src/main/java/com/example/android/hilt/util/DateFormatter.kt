@@ -22,7 +22,8 @@ import java.util.Date
 import javax.inject.Inject
 
 /**
- * String formatter for the log dates.
+ * String formatter for the log dates. To tell Hilt how to provide instances of a type, add the @Inject annotation to the constructor of the class you want Hilt to inject.
+ * With this, Hilt knows how to provide instances of [DateFormatter]
  */
 class DateFormatter @Inject constructor() {
 
