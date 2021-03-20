@@ -414,3 +414,15 @@ class LogsFragment : Fragment() {
 }
 
 ```
+
+### What is @EntryPoint?
+
+`@EntryPoint` annotation which is used to **inject dependencies in classes not supported by Hilt**.
+
+As we saw before, Hilt comes with support for the most common Android components. However, you might need to perform field injection in classes that either are not supported directly by Hilt or cannot use Hilt.
+
+In those cases, you can use `@EntryPoint`. An entry point is the boundary place where you can get Hilt-provided objects from code that cannot use Hilt to inject its dependencies. It is the point where code first enters into containers managed by Hilt.
+
+**An entry point is an interface with an accessor method for each binding type we want** (including its qualifier). Also, the interface must be annotated with `@InstallIn` to specify the component in which to install the entry point.
+
+Notice that the interface is annotated with the `@EntryPoint` and it's installed in the `SingletonComponent` since we want the dependency from an instance of the `Application` container. Inside the interface, we expose methods for the bindings we want to access, in our case, `LogDao`.
