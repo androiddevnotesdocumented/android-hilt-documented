@@ -34,12 +34,21 @@ import javax.inject.Inject
 
 /**
  * Fragment that displays the database logs.
+ * Annotating Android classes with @AndroidEntryPoint creates a dependencies container that follows the Android class lifecycle.
+ * With @AndroidEntryPoint, Hilt will create a dependencies container that is attached to [LogsFragment]'s lifecycle and will be able to inject instances into [LogsFragment].
  */
 @AndroidEntryPoint
 class LogsFragment : Fragment() {
 
+    /**
+     * Hilt will be in charge of populating logger field for us. This is called field injection. To perform field injection, use the @Inject annotation on Android class fields you want to be injected by Hilt.
+     */
     @InMemoryLogger
     @Inject lateinit var logger: LoggerDataSource
+
+    /**
+     * Hilt will be in charge of populating dateFormatter field for us. This is called field injection. To perform field injection, use the @Inject annotation on Android class fields you want to be injected by Hilt.
+     */
     @Inject lateinit var dateFormatter: DateFormatter
 
     private lateinit var recyclerView: RecyclerView

@@ -19,5 +19,10 @@ package com.example.android.hilt
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
+/**
+ * Similarly to how the instance of ServiceLocator in the LogApplication class is used and initialized, to add a container that is attached to the app's lifecycle, we need to annotate the Application class with @HiltAndroidApp.
+ *
+ * @HiltAndroidApp triggers Hilt's code generation, including a base class for your application that can use dependency injection. The application container is the parent container for the app, which means that other containers can access the dependencies that it provides.
+ */
 @HiltAndroidApp
 class LogApplication : Application()
